@@ -5,6 +5,7 @@ import { SiTailwindcss, SiNextdotjs, SiTypescript, SiPython } from "react-icons/
 import { GitBranch } from "lucide-react"
 
 const Skills = () => {
+  
   const skills = [
     { icon: <FaHtml5 className="text-4xl text-[#E44D26]" />, name: "HTML5" },
     { icon: <FaCss3Alt className="text-4xl text-[#1572B6]" />, name: "CSS3" },

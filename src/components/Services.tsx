@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { containerVariants, itemVariants } from "../lib/animations"
+// import SpotlightCard from "./ui/SpotlightCard"
 
 const Services = () => {
   return (
@@ -10,6 +11,9 @@ const Services = () => {
           <button className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
             MY SERVICES
           </button>
+          <p className="mt-3 font-light text-xl">
+          Offering end-to-end web solutions — from design and development to <br /> optimization and documentation.
+          </p>
         </motion.h2>
         
         <div className="grid md:grid-cols-3 gap-6">
@@ -20,7 +24,25 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-        
+
+        {/* <div className="grid md:grid-cols-3 gap-6">
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+            <h3 className="text-xl font-semibold mb-3">Fullstack Web Development</h3>
+            <p className="text-white/70">Building powerful and scalable web applications using the MERN stack and Next.js.</p>
+          </SpotlightCard>
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+            <h3 className="text-xl font-semibold mb-3">Fullstack Web Development</h3>
+            <p className="text-white/70">Building powerful and scalable web applications using the MERN stack and Next.js.</p>
+          </SpotlightCard>
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+            <h3 className="text-xl font-semibold mb-3">Fullstack Web Development</h3>
+            <p className="text-white/70">Building powerful and scalable web applications using the MERN stack and Next.js.</p>
+          </SpotlightCard>
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+            <h3 className="text-xl font-semibold mb-3">Fullstack Web Development</h3>
+            <p className="text-white/70">Building powerful and scalable web applications using the MERN stack and Next.js.</p>
+          </SpotlightCard>
+        </div> */}
       </motion.div>
     </section>
   )
