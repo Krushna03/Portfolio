@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../lib/animations";
-import { ArrowRightIcon, Linkedin, MessageCircle, Send, Twitter } from "lucide-react";
+import { Linkedin, MessageCircle, Send, Twitter } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { FaGithub } from "react-icons/fa";
 

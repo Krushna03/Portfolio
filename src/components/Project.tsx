@@ -1,7 +1,5 @@
 import { motion } from "framer-motion"
 import { containerVariants, itemVariants } from "../lib/animations"
-import { ArrowRightIcon } from "lucide-react"
-
 const Projects = () => {
  
   return (

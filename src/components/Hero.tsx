@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
-import { Button } from "../components/ui/button"
-import { BackgroundBeams } from "./ui/background-beams"
+// import { Button } from "../components/ui/button"
+// import { BackgroundBeams } from "./ui/background-beams"
 
 export default function Hero() {
   

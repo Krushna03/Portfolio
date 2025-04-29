@@ -1,4 +1,4 @@
-import { MoonIcon } from 'lucide-react'
+
 
 const Header = () => {
 
@@ -34,7 +34,7 @@ const Header = () => {
               </button>
 
             </div>
-            
+
             {/* <button className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20">
               <MoonIcon className="w-4 h-4" />
             </button> */}
