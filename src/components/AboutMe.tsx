@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../lib/animations";
-import { Button } from "./ui/button"
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card"
@@ -14,7 +10,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from ".//ui/tabs"
+} from "./ui/tabs"
 
 
 const AboutMe = () => {
