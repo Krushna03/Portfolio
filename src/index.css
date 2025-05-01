@@ -74,3 +74,11 @@
   color: rgb(28,2,158) linear-gradient(162deg, rgba(28,2,158,0.9893207282913166) 4%, rgba(135,16,132,1) 76%);
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}

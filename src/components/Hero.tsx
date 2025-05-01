@@ -41,7 +41,7 @@ export default function Hero() {
             <span className="text-[#fd73b4] inline-block">
               <Typewriter
                 options={{
-                  strings: ['Full Stack Developer', 'MERN Stack Developer'],
+                  strings: ['Full Stack Developer', 'Part Time Freelancer', 'MERN Stack Developer',],
                   autoStart: true,
                   loop: true,
                 }}

@@ -5,6 +5,7 @@ import Skills from "./components/Skills"
 import Projects from "./components/Project"
 import Contact from "./components/Contact"
 import Header from "./components/Header"
+import AboutMe from "./components/AboutMe"
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       <Services />
       <Skills />
       <Projects />
+      <AboutMe />
       <Contact />
 
       {/* Footer */}

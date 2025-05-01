@@ -19,7 +19,8 @@ const Skills = () => {
           </p>
         </motion.h2>
 
-        <motion.div variants={containerVariants} className="max-w-5xl mx-auto grid grid-cols-3 md:grid-cols-5 gap-10 text-center">
+        <motion.div variants={containerVariants} className="relative max-w-5xl mx-auto grid grid-cols-3 md:grid-cols-5 gap-10 text-center">
+        <div className="absolute inset-0 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
           {skills.map((skill, index) => (
             <motion.div key={index} variants={itemVariants} className="flex flex-col items-center">
               {skill.icon}

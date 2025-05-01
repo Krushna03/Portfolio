@@ -28,7 +28,7 @@ const Header = () => {
               </button>
               
               <button className="text-white hover:text-[#ff2a8d]">
-                <a href="#projects">
+                <a href="#about">
                   ABOUT ME
                 </a>
               </button>

@@ -15,7 +15,8 @@ const Projects = () => {
           </p>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 relative">
+        <div className="absolute inset-1 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
         {
           projects.map((item) => (
             <a href={item.link} target="_blank" className="p-2 rounded-xl bg-[#2e2d3abb]">
