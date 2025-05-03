@@ -2,7 +2,8 @@ import { motion } from "framer-motion"
 import { containerVariants, itemVariants } from "../lib/animations"
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGithub, FaNpm } from "react-icons/fa"
 import { SiTailwindcss, SiNextdotjs, SiTypescript, SiPython, SiDjango } from "react-icons/si"
-import { GitBranch } from "lucide-react"
+import { Asterisk, GitBranch } from "lucide-react"
+import { GiExtraLucid } from "react-icons/gi"
 
 const Skills = () => {
 
@@ -11,10 +12,10 @@ const Skills = () => {
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-12">
       
         <motion.h2 variants={itemVariants} className="text-center">
-          <button className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
+          <button className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
             SKILLS
           </button>
-          <p className="mt-3 font-medium text-xl">
+          <p className="mt-3 font-light text-lg sm:text-xl">
             The skills, tools and technologies i use:
           </p>
         </motion.h2>
@@ -24,7 +25,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div key={index} variants={itemVariants} className="flex flex-col items-center">
               {skill.icon}
-              <span className="text-lg font-semibold mt-2">{skill.name}</span>
+              <span className="text-sm sm:text-lg font-semibold mt-2">{skill.name}</span>
             </motion.div>
           ))}
         </motion.div>
@@ -52,4 +53,5 @@ const skills = [
   { icon: <FaGithub className="text-4xl text-white" />, name: "GitHub" },
   { icon: <GitBranch className="text-4xl text-[#ff6262]" />, name: "Git" },
   { icon: <FaNpm className="text-4xl text-[#CB3837]" />, name: "npm" },
+  { icon: <Asterisk size="35px" className="mt-1 text-4xl text-[#ffffff]" />, name: "Many Other...." },
 ]

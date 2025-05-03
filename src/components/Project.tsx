@@ -3,24 +3,24 @@ import { containerVariants, itemVariants } from "../lib/animations"
 const Projects = () => {
 
   return (
-    <section id="projects" className="container mx-auto px-4 py-16 md:py-24">
+    <section id="projects" className="mx-6 lg:container lg:mx-auto md:mx-8 py-16 md:py-16">
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-12">
 
         <motion.h2 variants={itemVariants} className="text-center">
-          <button className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
+          <button className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
             PROJECTS
           </button>
-          <p className="mt-3 font-medium text-xl">
+          <p className="mt-3 font-light text-lg sm:text-xl">
             See all my projects:
           </p>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 relative">
-        <div className="absolute inset-1 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
+        {/* <div className="absolute inset-1 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div> */}
         {
           projects.map((item) => (
-            <a href={item.link} target="_blank" className="p-2 rounded-xl bg-[#2e2d3abb]">
-              <motion.div key={item.name} variants={itemVariants} className="bg-[#20202edc] rounded-lg overflow-hidden group hover:translate-y-[-5px] transition-all duration-300 cursor-pointer">
+            <a href={item.link} target="_blank" className="p-3 rounded-xl shadow-2xl bg-[#16161bdc]">
+              <motion.div key={item.name} variants={itemVariants} className="bg-[#16161bdc] rounded-lg overflow-hidden group hover:translate-y-[-5px] transition-all duration-300 cursor-pointer">
                 <div className="relative h-">
                   <img src={item.img} alt={`Project ${item.name}`} className="object-fill" />
                 </div>
@@ -57,7 +57,7 @@ const projects = [
     img: "/Hirrd.png",
     name: "Hirrd",
     link: "https://hirrd-1.vercel.app/",
-    description: "An hiring platfrom foir job seeker and recruiter",
+    description: "An hiring platfrom for job seeker and recruiter",
     TechUsed: "React, Nodejs, Express, MongoDB"
   },
   {

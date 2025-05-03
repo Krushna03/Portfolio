@@ -19,7 +19,7 @@ const AboutMe = () => {
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-12">
 
         <motion.h2 variants={itemVariants} className="text-center">
-          <button className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
+          <button className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
             About Me
           </button>
           <p className="mt-3 text-xl text-white/80">

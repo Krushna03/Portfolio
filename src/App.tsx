@@ -5,14 +5,14 @@ import Skills from "./components/Skills"
 import Projects from "./components/Project"
 import Contact from "./components/Contact"
 import Header from "./components/Header"
-import AboutMe from "./components/AboutMe"
+// import AboutMe from "./components/AboutMe"
 
 
 export default function App() {
 
 
   return (
-    <div className="min-h-screen bg-[#0a0a14] text-white sm:px-20">
+    <div className="min-h-screen bg-[#0a0a14] text-white lg:px-16">
       
       {/* Navigation */}
       <Header />
@@ -22,7 +22,7 @@ export default function App() {
       <Services />
       <Skills />
       <Projects />
-      <AboutMe />
+      {/* <AboutMe /> */}
       <Contact />
 
       {/* Footer */}

@@ -10,7 +10,7 @@ export default function Hero() {
   
   return (
     <>
-      <section className="relative z-10 container mx-auto py-8 md:py-16 flex flex-col md:items-start md:flex-row overflow-hidden">
+      <section className="lg:container lg:mx-auto mx-3 relative z-10 md:mx-7 pt-8 md:pt-16 pb-0 flex flex-col md:items-start md:flex-row overflow-visible border-b-[3px] border-white/20">
 
         {/* Particles Background */}
         <div className="absolute inset-0 -z-10">
@@ -32,35 +32,58 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }} 
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-5xl mt-8 md:text-8xl mb-8 tracking-[8px] font-sans font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-pink-400 to-purple-500">
+          <h1 className="text-center sm:text-left text-4xl md:text-5xl mt-5 sm:mt-8 lg:text-[87px] mb-5 md:mb-10 lg:mb-8 tracking-[8px] font-sans font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-pink-400 to-purple-500">
             FULL STACK <span className="tracking-[10px]">DEVELOPER</span> 
           </h1>
 
-          <p className="text-2xl text-white/80 mb-10 max-w-2xl">
-            I am Krushna — a&nbsp;
-            <span className="text-[#fd73b4] inline-block">
+          <p className="text-center sm:text-left text-xl lg:text-2xl text-white/80 md:mb-12 lg:mb-10 max-w-2xl">
+            I am Krushna&nbsp;
+            {/* For small devices only */}
+            <span className="flex justify-center sm:hidden text-[#fd73b4]">
+              a&nbsp;
               <Typewriter
                 options={{
-                  strings: ['Full Stack Developer', 'Part Time Freelancer', 'MERN Stack Developer',],
+                  strings: ['Full Stack Developer', 'Part Time Freelancer', 'MERN Stack Developer'],
                   autoStart: true,
                   loop: true,
                 }}
               />
             </span>
-            <br />
-            with a passion for creating beautiful & responsive websites.
+
+            {/* For sm and above: “— a” and Typewriter on different lines */}
+            <span className="hidden sm:inline-block">— a&nbsp;</span>
+            <span className="hidden sm:inline-block text-[#fd73b4]">
+              <Typewriter
+                options={{
+                  strings: ['Full Stack Developer', 'Part Time Freelancer', 'MERN Stack Developer'],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
+
+            <br className="hidden md:block" />
+            <span>
+              with a passion for creating beautiful & responsive websites.
+            </span>
           </p>
 
-          <div className="relative inline-block rounded-full p-[3px] bg-[length:200%_200%] bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 animate-border">
-            <a href="#projects">
-              <button className="relative z-10 rounded-full bg-[#12122dee] text-white font-semibold px-10 py-4 hover:opacity-90 transition">
-                VIEW MY WORK
-              </button>
-            </a>
-            <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 blur-md opacity-80 animate-border z-0" />
+          
+          <div className="flex gap-3">
+            <div className="mx-auto sm:mx-0 mt-5 sm:mt-0 relative inline-block rounded-full p-[3px] bg-[length:200%_200%] bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 animate-border">
+              <a href="#projects">
+                <button className="relative z-10 rounded-full bg-[#12122dee] text-white font-semibold px-5 py-2 lg:px-10 lg:py-4 hover:opacity-90 transition">
+                  VIEW MY WORK
+                </button>
+              </a>
+              <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 blur-md opacity-80 animate-border z-0" />
+            </div>
+            {/* <div className="border px-7 font-semibold py-5 rounded-full ">
+              My Resume
+            </div> */}
           </div>
 
-          <div className="flex flex-row items-center mt-10 mb-10 w-full">
+          <div className="mx-auto sm:mx-0 mt-5 sm:mt-0 flex flex-row items-center justify-center sm:justify-start md:mt-12 lg:mt-10 lg:mb-10">
             <AnimatedTooltip items={people} />
           </div>
         </motion.div>
@@ -76,7 +99,7 @@ export default function Hero() {
           <div className="absolute top-1/4 right-10 w-72 h-72 bg-pink-500 opacity-30 rounded-full blur-3xl"></div>
 
           {/* Coding text overlay */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-400 text-2xl font-mono opacity-20 space-y-4 tracking-[3px]">
+          <div className="absolute left-12 md:left-10 lg:left-0 inset-0 flex flex-col justify-center items-center text-gray-400 sm:text-2xl font-mono opacity-20 space-y-4 tracking-[3px]">
             <p>console.log('Hello World');</p>
             <p>$ npm install frontend-tools</p>
             <p>&lt;html&gt; &lt;/html&gt;</p>
@@ -86,14 +109,14 @@ export default function Hero() {
           </div>
 
           {/* Main Image */}
-          <div className="relative z-10 flex justify-center items-center">
-            <div className="absolute inset-0 rounded-full blur-xl opacity-15 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
-            <img
-              src="/profile-2.png"
-              alt="Frontend Developer"
-              className="relative z-10 w-[410px] h-auto object-cover rounded-full mr-24"
-            />
-          </div>
+          <div className="relative z-10">
+            <div className="left-10 md:right-10 absolute inset-0 rounded-full blur-xl opacity-15 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
+              <img
+                src="/profile-2.png"
+                alt="Frontend Developer"
+                className="relative h-96 mt-6 lg:mt-0 md:w-[320px] md:h-[500px] lg:w-[450px] lg:h-auto object-fill rounded-full md:mr-12 lg:mr-24"
+              />
+            </div>
         </motion.div>
 
       </section>
