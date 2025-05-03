@@ -3,7 +3,6 @@ import { containerVariants, itemVariants } from "../lib/animations"
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGithub, FaNpm } from "react-icons/fa"
 import { SiTailwindcss, SiNextdotjs, SiTypescript, SiPython, SiDjango } from "react-icons/si"
 import { Asterisk, GitBranch } from "lucide-react"
-import { GiExtraLucid } from "react-icons/gi"
 
 const Skills = () => {
 
