@@ -28,7 +28,7 @@ const Services = () => {
         <div className="absolute inset-0 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
           {
             services.map((item) => (
-              <SpotlightCard className="sm:mt-4 custom-spotlight-card cursor-pointer" spotlightColor="rgba(0, 229, 255, 0.2)">
+              <SpotlightCard key={item.title} className="sm:mt-4 custom-spotlight-card cursor-pointer" spotlightColor="rgba(0, 229, 255, 0.2)">
                 <div className="flex items-center gap-3">
                   {React.createElement(item.image, { className: "mb-2 h-5 w-5" })}
                   <h3 className="text-xl text-white font-bold mb-3">{item.title}</h3>

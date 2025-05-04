@@ -15,18 +15,18 @@ export default function App() {
     <div className="min-h-screen bg-[#0a0a14] text-white lg:px-16">
       
       {/* Navigation */}
-      <Header />
+        <Header />
 
       {/* Sections */}
-      <Hero />
-      <Services />
-      <Skills />
-      <Projects />
-      {/* <AboutMe /> */}
-      <Contact />
+        <Hero />
+        <Services />
+        <Skills />
+        <Projects />
+        {/* <AboutMe /> */}
+        <Contact />
 
       {/* Footer */}
-      <Footer />
+        <Footer />
     </div>
   )
 }

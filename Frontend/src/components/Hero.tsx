@@ -36,7 +36,7 @@ export default function Hero() {
             FULL STACK <span className="tracking-[10px]">DEVELOPER</span> 
           </h1>
 
-          <p className="text-center sm:text-left text-xl lg:text-2xl text-white/80 md:mb-12 lg:mb-10 max-w-2xl">
+          <div className="text-center sm:text-left text-xl lg:text-2xl text-white/80 md:mb-12 lg:mb-10 max-w-2xl">
             I am Krushna&nbsp;
             {/* For small devices only */}
             <span className="flex justify-center sm:hidden text-[#fd73b4]">
@@ -50,7 +50,7 @@ export default function Hero() {
               />
             </span>
 
-            {/* For sm and above: “— a” and Typewriter on different lines */}
+            {/* For sm and above*/}
             <span className="hidden sm:inline-block">— a&nbsp;</span>
             <span className="hidden sm:inline-block text-[#fd73b4]">
               <Typewriter
@@ -66,7 +66,7 @@ export default function Hero() {
             <span>
               with a passion for creating beautiful & responsive websites.
             </span>
-          </p>
+          </div>
 
           
           <div className="flex gap-3">
@@ -114,7 +114,7 @@ export default function Hero() {
               <img
                 src="/profile-2.png"
                 alt="Frontend Developer"
-                className="relative h-96 mt-6 lg:mt-0 md:w-[320px] md:h-[500px] lg:w-[450px] lg:h-auto object-fill rounded-full md:mr-12 lg:mr-24"
+                className="relative h-96 mt-6 lg:mt-0 md:w-[320px] md:h-[500px] lg:w-[450px] lg:h-auto object-fill md:mr-12 lg:mr-24"
               />
             </div>
         </motion.div>

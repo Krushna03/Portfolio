@@ -19,7 +19,7 @@ const Projects = () => {
         {/* <div className="absolute inset-1 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div> */}
         {
           projects.map((item) => (
-            <a href={item.link} target="_blank" className="p-3 rounded-xl shadow-2xl bg-[#16161bdc]">
+            <a key={item.name} href={item.link} target="_blank" className="p-3 rounded-xl shadow-2xl bg-[#16161bdc]">
               <motion.div key={item.name} variants={itemVariants} className="bg-[#16161bdc] rounded-lg overflow-hidden group hover:translate-y-[-5px] transition-all duration-300 cursor-pointer">
                 <div className="relative h-">
                   <img src={item.img} alt={`Project ${item.name}`} className="object-fill" />

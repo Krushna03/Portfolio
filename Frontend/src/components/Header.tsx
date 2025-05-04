@@ -27,11 +27,11 @@ const Header = () => {
                 </a>
               </button>
               
-              <button className="text-white text-sm font-medium lg:text-sm hover:text-[#ff2a8d] text-nowrap">
+              {/* <button className="text-white text-sm font-medium lg:text-sm hover:text-[#ff2a8d] text-nowrap">
                 <a href="#about">
                   ABOUT
                 </a>
-              </button>
+              </button> */}
 
               <button className="text-white text-sm font-medium lg:text-sm hover:text-[#ff2a8d]">
                 <a href="#contact">
