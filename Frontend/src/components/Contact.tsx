@@ -13,6 +13,9 @@ interface contactdata {
   email: string,
   message: string
 }
+
+const BASEURL = import.meta.env.VITE_BACKEND_BASEURL
+
 const Contact = () => {
 
   const [loading, setLoading] = useState(false)
@@ -22,7 +25,7 @@ const Contact = () => {
   const onSubmit = async (data: contactdata) => {
     setLoading(true)
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/contact/new-contact", data, {
+      const res = await axios.post(`${BASEURL}/api/v1/contact/new-contact`, data, {
         withCredentials: true
       });
 
