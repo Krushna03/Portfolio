@@ -61,7 +61,22 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+			keyframes: {
+				'shimmer-slide': {
+					'0%': { transform: 'translateX(-60%)' },
+					'100%': { transform: 'translateX(60%)' },
+				},
+				'spin-around': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' },
+				},
+			},
+			animation: {
+				'spin-slow': 'spin 2s linear infinite',
+				'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
+				'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
+			},
   	}
   },
   plugins: [require("tailwindcss-animate"),  addVariablesForColors],

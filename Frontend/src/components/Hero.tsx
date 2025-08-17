@@ -2,11 +2,16 @@ import { motion } from "framer-motion"
 import Particles from "./ui/particles"
 import Typewriter from 'typewriter-effect';
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-
-// import { Button } from "../components/ui/button"
-// import { BackgroundBeams } from "./ui/background-beams"
+import { ShimmerButton } from "./magicui/shimmer-button"
 
 export default function Hero() {
+
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Krushna-Shivshankar-Sakhare-Resume.pdf"; 
+    link.download = "Krushna-Sakhare-Resume.pdf"; 
+    link.click();
+  }
   
   return (
     <>
@@ -69,7 +74,7 @@ export default function Hero() {
           </div>
 
           
-          <div className="flex gap-3">
+          <div className="text-center sm:flex gap-5">
             <div className="mx-auto sm:mx-0 mt-5 sm:mt-0 relative inline-block rounded-full p-[3px] bg-[length:200%_200%] bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 animate-border">
               <a href="#projects">
                 <button className="relative z-10 rounded-full bg-[#12122dee] text-white font-semibold px-5 py-2 lg:px-10 lg:py-4 hover:opacity-90 transition">
@@ -78,9 +83,10 @@ export default function Hero() {
               </a>
               <div className="absolute inset-0 rounded-full p-[3px] bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 blur-md opacity-80 animate-border z-0" />
             </div>
-            {/* <div className="border px-7 font-semibold py-5 rounded-full ">
-              My Resume
-            </div> */}
+
+            <ShimmerButton className="mx-auto sm:mx-0 mt-4 sm:mt-0 text-sm font-semibold sm:text-base" onClick={handleResumeDownload}>
+              Download Resume
+            </ShimmerButton>
           </div>
 
           <div className="mx-auto sm:mx-0 mt-5 sm:mt-0 flex flex-row items-center justify-center sm:justify-start md:mt-12 lg:mt-10 lg:mb-10">
