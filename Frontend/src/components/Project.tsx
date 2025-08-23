@@ -67,6 +67,20 @@ const projects = [
     description: "An E-commerce platform for the seamless shopping experience",
     TechUsed: "Gemini Api, React, Nodejs, Express, MongoDB"
   },
+  {
+    img: "/anju.png",
+    name: "Anju Shahani Portfolio",
+    link: "https://anju-shahani-website.vercel.app/",
+    description: "A Portfolio Website of a Dubai based Laughter Yoga Coach",
+    TechUsed: "React, Tailwind Css, Shadcn Ui"
+  },
+  {
+    img: "/pro-sport.png",
+    name: "Pro Sport India Pvt. Ltd.",
+    link: "https://pro-sports-india-foundation.vercel.app/",
+    description: "A Company Website of a Sport Management Company",
+    TechUsed: "React, Tailwind Css, Shadcn Ui"
+  },
   // {
   //   img: "/ColdMailer.Ai.png",
   //   name: "ColdMailer.Ai",
