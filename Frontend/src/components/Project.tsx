@@ -70,36 +70,15 @@ const projects = [
   {
     img: "/anju.png",
     name: "Anju Shahani Portfolio",
-    link: "https://anju-shahani-website.vercel.app/",
-    description: "A Portfolio Website of a Dubai based Laughter Yoga Coach",
+    link: "https://anjushahani.com",
+    description: "A Portfolio Website of a Dubai based Laughter Yoga Coach. I contributed to multiple UI component.",
     TechUsed: "React, Tailwind Css, Shadcn Ui"
   },
   {
     img: "/pro-sport.png",
     name: "Pro Sport India Pvt. Ltd.",
-    link: "https://pro-sports-india-foundation.vercel.app/",
+    link: "https://www.proatheletesports.com",
     description: "A Company Website of a Sport Management Company",
     TechUsed: "React, Tailwind Css, Shadcn Ui"
   },
-  // {
-  //   img: "/ColdMailer.Ai.png",
-  //   name: "ColdMailer.Ai",
-  //   link: "",
-  //   description: "An Ai based cold email generator",
-  //   TechUsed: "Gemini Api, React, Nodejs, Express, MongoDB"
-  // },
-  // {
-  //   img: "/Hirrd.png",
-  //   name: "Hirrd",
-  //   link: "",
-  //   description: "An hiring platfrom foir job seeker and recruiter",
-  //   TechUsed: "React, Nodejs, Express, MongoDB"
-  // },
-  // {
-  //   img: "/Kloset.png",
-  //   name: "Kloset",
-  //   link: "",
-  //   description: "An E-commerce platform for the seamless shopping experience",
-  //   TechUsed: "Gemini Api, React, Nodejs, Express, MongoDB"
-  // },
 ]
