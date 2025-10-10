@@ -5,7 +5,7 @@ import Skills from "./components/Skills"
 import Projects from "./components/Project"
 import Contact from "./components/Contact"
 import Header from "./components/Header"
-import AboutMe from "./components/AboutMe"
+// import AboutMe from "./components/AboutMe"
 
 
 export default function App() {
