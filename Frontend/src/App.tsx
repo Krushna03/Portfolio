@@ -22,7 +22,7 @@ export default function App() {
         <Services />
         <Skills />
         <Projects />
-        <AboutMe />
+        {/* <AboutMe /> */}
         <Contact />
 
       {/* Footer */}
