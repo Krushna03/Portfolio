@@ -15,7 +15,7 @@ const Skills = () => {
             SKILLS
           </button>
           <p className="mt-3 font-light text-lg sm:text-xl">
-            The skills, tools and technologies i use:
+            The skills, tools and technologies I use
           </p>
         </motion.h2>
 

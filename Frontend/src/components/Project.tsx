@@ -11,7 +11,7 @@ const Projects = () => {
             PROJECTS
           </button>
           <p className="mt-3 font-light text-lg sm:text-xl">
-            See all my projects:
+            See all my projects
           </p>
         </motion.h2>
 

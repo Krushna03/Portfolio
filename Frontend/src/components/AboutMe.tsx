@@ -1,135 +1,146 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../lib/animations";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-} from "./ui/card"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "./ui/tabs"
-
+import SpotlightCard from "./ui/SpotlightCard";
 
 const AboutMe = () => {
   return (
-    <div id='about' className="py-10 overflow-x-hidden">
+    <section id='about' className="mx-4 sm:mx-6 lg:container lg:mx-auto md:mx-8 py-16 md:py-24 overflow-x-hidden">
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-12">
 
         <motion.h2 variants={itemVariants} className="text-center">
           <button className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
-            About Me
+            ABOUT ME
           </button>
-          <p className="mt-3 text-xl text-white/80">
-            Know more about me.
+          <p className="mt-3 font-light text-lg sm:text-xl text-white/80">
+            Get to know me better
           </p>
         </motion.h2>
 
-        <motion.div variants={itemVariants} className="w-full flex gap-10">
+        <motion.div variants={itemVariants} className="w-full flex flex-col lg:flex-row items-center lg:items-start">
           
-          {/* Left Side: Contact Info */}
-          <div className="w-1/3">
-          <div className="relative ml-8">
-            <div className="absolute inset-0 rounded-full blur-xl opacity-15 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
-              <img
-                src="/profile-2.png"
-                alt="Frontend Developer"
-                className="relative z-10 w-[350px] h-auto object-cover rounded-full ml-10"
-              />
+          {/* Profile Image Section - Updated Styling */}
+          <div className="hidden sm:block w-full lg:w-1/3 flex justify-center ml-6">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-2xl blur-2xl opacity-30 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
+              <div className="relative">
+                <img
+                  src="/about-me.png"
+                  alt="Krushna Sakhare - Full Stack Developer"
+                  className="w-full max-w-[410px] rounded-2xl object-cover border-2 border-white/20 shadow-2xl cursor-pointer"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Right Side: Contact Form */}
-          <div className="space-y-6">
-            <Tabs defaultValue="experience" className="w-[800px]">
-              
-              <TabsList className="grid w-full grid-cols-2 bg-[#2a3742] h-11">
-                <TabsTrigger className="text-lg font-bold"  value="experience">Experience</TabsTrigger>
-                <TabsTrigger className="text-lg font-bold" value="education">Education</TabsTrigger>
-              </TabsList>
+          {/* Content Section */}
+          <div className="w-full lg:w-2/3 space-y-4">
+            <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+              <div className="space-y-4 cursor-pointer">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Hi, I'm Krushna Sakhare
+                </h3>
+                <div className="space-y-3 text-base text-white/80 leading-relaxed w-full">
+                  <p className="w-full">
+                    I'm a passionate <span className="text-purple-400 font-semibold">Full Stack Developer</span> and <span className="text-purple-400 font-semibold">Part-Time Freelancer</span> with expertise in the MERN stack. I love creating beautiful, responsive, and scalable web applications that solve real-world problems.
+                  </p>
+                  <p className="w-full">
+                    My journey in web development started with a curiosity to build things that matter. I specialize in developing end-to-end solutions, from designing intuitive user interfaces to building robust backend systems. I'm always eager to learn new technologies and take on challenging projects.
+                  </p>
+                  <p className="w-full">
+                    When I'm not coding, I enjoy contributing to open-source projects, writing technical content, and helping fellow developers. I believe in writing clean, maintainable code and following best practices to deliver high-quality software.
+                  </p>
+                </div>
+              </div>
+            </SpotlightCard>
 
-              <TabsContent value="experience">
-                <Card className="bg-[#292b2e] border-none shadow-xl text-white">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-gray-100">
-                      Full Stack Developer | TDS Avenue Codeforge <br />
-                      <span className="text-sm font-normal text-gray-300">(Nov 2024 - Jan 2025)</span>
-                    </CardTitle>
+            {/* Stats/Highlights Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <SpotlightCard className="custom-spotlight-card text-center cursor-pointer" spotlightColor="rgba(255, 20, 147, 0.2)">
+                <div className="space-y-1">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+                    2+
+                  </div>
+                  <p className="text-sm sm:text-base text-white/70 font-medium">
+                    Years of Experience
+                  </p>
+                </div>
+              </SpotlightCard>
 
-                    <div className="mt-4 space-y-2">
-                      <div>
-                        <h2 className="font-semibold">1. VidyaNexus Web App</h2>
-                        <p className="text-sm text-gray-300">
-                          • Developed 90% of the frontend and 100% of the backend for a School Management System with distinct panels for Superadmin, Admin, Teacher, and Student.
-                        </p>
-                      </div>
+              <SpotlightCard className="custom-spotlight-card text-center cursor-pointer" spotlightColor="rgba(138, 43, 226, 0.2)">
+                <div className="space-y-1">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+                    10+
+                  </div>
+                  <p className="text-sm sm:text-base text-white/70 font-medium">
+                    Projects Completed
+                  </p>
+                </div>
+              </SpotlightCard>
 
-                      <div className="pt-2">
-                        <h2 className="font-semibold">2. FreshPicked</h2>
-                        <p className="text-sm text-gray-300">
-                          • Built the entire backend (100%) in Node.js for a vegetable delivery mobile application.
-                        </p>
-                      </div>
-                    </div>
-                  </CardHeader>
+              <SpotlightCard className="custom-spotlight-card text-center cursor-pointer" spotlightColor="rgba(0, 191, 255, 0.2)">
+                <div className="space-y-1">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
+                    MERN
+                  </div>
+                  <p className="text-sm sm:text-base text-white/70 font-medium">
+                    Stack Expertise
+                  </p>
+                </div>
+              </SpotlightCard>
 
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-gray-100">
-                      Software Intern | TechWalnut Innovation LLP <br />
-                      <span className="text-sm font-normal text-gray-300">(Jan 2025 -  Present)</span>
-                    </CardTitle>
+              <SpotlightCard className="custom-spotlight-card text-center cursor-pointer" spotlightColor="rgba(255, 20, 147, 0.2)">
+                <div className="space-y-1">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
+                    100%
+                  </div>
+                  <p className="text-sm sm:text-base text-white/70 font-medium">
+                    Client Satisfaction
+                  </p>
+                </div>
+              </SpotlightCard>
+            </div>
 
-                    <div className="mt-4 space-y-2">
-                      <div>
-                        <h2 className="font-semibold">1. Hospital Management System</h2>
-                        <p className="text-sm text-gray-300">
-                          • Developed & handled 60% frontend part of a Hospital Management System.
-                        </p>
-                      </div>
-
-                      <div className="pt-2">
-                        <h2 className="font-semibold">2. Human Resource Management System</h2>
-                        <p className="text-sm text-gray-300">
-                          • Developed a full-fledged frontend..
-                        </p>
-                      </div>
-                    </div>
-                  </CardHeader>
-                </Card>
-              </TabsContent>
-
-              
-              <TabsContent value="education">
-                <Card className="bg-[#292b2e] border-none shadow-xl text-white">
-                  <CardHeader className="space-y-">
-                    <h1 className="text-lg font-bold">Engineering</h1>
-                    <CardTitle className="text-gray-200">Government College Of Engineering, Nagpur (2022 to 2025)</CardTitle>
-                    <CardTitle className="text-gray-200">Electronics & Telecomunication</CardTitle>
-                    <CardTitle className="text-gray-200">CGPA: 7.11</CardTitle>
-                  </CardHeader>
-                  <CardHeader className="space-y-3">
-                    <h1 className="text-lg font-bold -mt-2">Diploma</h1>
-                    <CardTitle className="text-gray-200">Government Polytechnic Nagpur (2019 to 2022)</CardTitle>
-                    <CardTitle className="text-gray-200">Diploma Civil Engineering</CardTitle>
-                    <CardTitle className="text-gray-200">Percentage: 92.35%</CardTitle>
-                  </CardHeader>
-                  <CardHeader className="space-y-3">
-                    <h1 className="text-lg font-bold -mt-2">School</h1>
-                    <CardTitle className="text-gray-200">Railway Men's High School, Nagpur (2022 to 2025)</CardTitle>
-                    <CardTitle className="text-gray-200">10th</CardTitle>
-                    <CardTitle className="text-gray-200">Percentage: 84%</CardTitle>
-                  </CardHeader>
-                </Card>
-              </TabsContent>
-            </Tabs>
+            {/* Key Highlights */}
+            {/* <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+              <div className="space-y-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                  What I Do
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-purple-400 mt-2 flex-shrink-0"></div>
+                    <p className="text-sm sm:text-base text-white/80">
+                      Full Stack Web Development
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-pink-400 mt-2 flex-shrink-0"></div>
+                    <p className="text-sm sm:text-base text-white/80">
+                      Frontend & Backend API Development
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-blue-400 mt-2 flex-shrink-0"></div>
+                    <p className="text-sm sm:text-base text-white/80">
+                      Responsive UI/UX Design
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2 flex-shrink-0"></div>
+                    <p className="text-sm sm:text-base text-white/80">
+                      Code Optimization & Bug Fixing
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SpotlightCard> */}
           </div>
 
         </motion.div>
 
       </motion.div>
-    </div>
+    </section>
   )
 }
 

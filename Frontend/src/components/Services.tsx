@@ -20,7 +20,7 @@ const Services = () => {
             MY SERVICES
           </button>
           <p className="mt-3 font-light text-lg sm:text-xl">
-          Offering end-to-end web solutions, <br /> from design and development to optimization and documentation.
+          Offering end-to-end web solutions, <br /> from design and development to optimization and documentation
           </p>
         </motion.h2>
 
