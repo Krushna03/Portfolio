@@ -56,15 +56,15 @@ const Header = () => {
     <nav className={`lg:container lg:mx-auto md:mx-7 py-2 ${
       isScrolledPastHero ? 'sm:fixed sm:top-4 sm:left-1/2 sm:w-auto sm:z-50 sm:px-4' : ''
     }`}>
-      <div className={`border border-gray-600 rounded-3xl mt-4 flex justify-between items-center mx-2 md:mx-0 px-4 lg:px-8 transition-all duration-300 ${
+      <div className={`border border-gray-600 rounded-3xl mt-4 flex flex-col md:flex-row justify-center md:justify-between items-center mx-2 md:mx-0 px-4 lg:px-8 transition-all duration-300 ${
         isScrolledPastHero 
-          ? 'sm:bg-[#0b070f] sm:border-purple-500/30 sm:shadow-lg sm:mt-0 sm:py-2.5 sm:px-5 sm:gap-6 sm:animate-[slideDown_0.3s_ease-out_forwards]' 
+          ? 'sm:bg-[#0b070f] sm:border-purple-500/30 sm:shadow-lg sm:mt-0 sm:py-2.5 sm:px-5 sm:gap-6 sm:animate-[slideDown_0.3s_ease-out_forwards] sm:flex-row sm:justify-between' 
           : 'p-3 md:p-6'
       }`}>
-        <div className={`transition-all duration-300 ${
+        <div className={`transition-all duration-300 w-full md:w-auto ${
           isScrolledPastHero ? 'sm:hidden' : ''
         }`}>
-          <h2 className="text-lg md:text-xl lg:text-3xl uppercase font-semibold tracking-widest cursor-pointer mx-auto md:mx-0">
+          <h2 className="text-lg md:text-xl lg:text-3xl uppercase font-semibold tracking-widest cursor-pointer text-center md:text-left">
             Krushna Sakhare
           </h2>
         </div>
