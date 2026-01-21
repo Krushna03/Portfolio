@@ -44,14 +44,14 @@ const Projects = () => {
               aria-label={`View ${item.name} project`}
             >
               <motion.div key={item.name} variants={itemVariants} className="bg-[#16161bdc] rounded-lg overflow-hidden group hover:translate-y-[-5px] transition-all duration-300 cursor-pointer">
-                <div className="relative h-48">
+                <div className="relative h-56">
                   {!loadedImages.has(item.img) && (
                     <Skeleton className="absolute inset-0 w-full h-full rounded-lg" />
                   )}
                   <img 
                     src={item.img} 
                     alt={`${item.name} - ${item.description}`} 
-                    className={`object-cover w-full h-full transition-opacity duration-300 ${
+                    className={`object-fit w-full h-full transition-opacity duration-300 ${
                       loadedImages.has(item.img) ? 'opacity-100' : 'opacity-0'
                     }`}
                     loading="lazy"
@@ -65,10 +65,20 @@ const Projects = () => {
                 </div>
 
                 <div className="p-4">
-                  <h3 className="font-bold text-xl mb-2 mt-2">{item.name}</h3>
-                  <h3 className="font-normal text-gray-100 mb-2">{item.description}</h3>
-                  <div className="flex gap-2 text-xs">
-                    <span className="py-2 text-gray-100  rounded">{item.TechUsed}</span>
+                  <h3 className="font-bold text-xl mb-3 mt-2">{item.name}</h3>
+                  <h3 className="font-normal text-sm text-gray-100 mb-4">{item.description}</h3>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    {item.TechUsed.split(",")
+                      .map((t) => t.trim())
+                      .filter(Boolean)
+                      .map((tech) => (
+                        <span
+                          key={`${item.name}-${tech}`}
+                          className="px-2.5 py-1 text-gray-100 bg-white/10 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                   </div>
                 </div>
               </motion.div>
