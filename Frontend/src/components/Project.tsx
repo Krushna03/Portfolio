@@ -1,6 +1,22 @@
 import { motion } from "framer-motion"
 import { containerVariants, itemVariants } from "../lib/animations"
+import { useState } from "react"
+import { Skeleton } from "./ui/Skeleton"
+
+interface Project {
+  img: string;
+  name: string;
+  link: string;
+  description: string;
+  TechUsed: string;
+}
+
 const Projects = () => {
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+
+  const handleImageLoad = (imgSrc: string) => {
+    setLoadedImages(prev => new Set(prev).add(imgSrc));
+  };
 
   return (
     <section id="projects" className="mx-6 lg:container lg:mx-auto md:mx-8 py-16 md:py-16">
@@ -19,10 +35,33 @@ const Projects = () => {
         {/* <div className="absolute inset-1 rounded-full blur-xl opacity-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div> */}
         {
           projects.map((item) => (
-            <a key={item.name} href={item.link} target="_blank" className="p-3 rounded-xl shadow-2xl bg-[#16161bdc]">
+            <a 
+              key={item.name} 
+              href={item.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 rounded-xl shadow-2xl bg-[#16161bdc]"
+              aria-label={`View ${item.name} project`}
+            >
               <motion.div key={item.name} variants={itemVariants} className="bg-[#16161bdc] rounded-lg overflow-hidden group hover:translate-y-[-5px] transition-all duration-300 cursor-pointer">
-                <div className="relative h-">
-                  <img src={item.img} alt={`Project ${item.name}`} className="object-fill" />
+                <div className="relative h-48">
+                  {!loadedImages.has(item.img) && (
+                    <Skeleton className="absolute inset-0 w-full h-full rounded-lg" />
+                  )}
+                  <img 
+                    src={item.img} 
+                    alt={`${item.name} - ${item.description}`} 
+                    className={`object-cover w-full h-full transition-opacity duration-300 ${
+                      loadedImages.has(item.img) ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    loading="lazy"
+                    onLoad={() => handleImageLoad(item.img)}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/logo.png';
+                      handleImageLoad(item.img);
+                    }}
+                  />
                 </div>
 
                 <div className="p-4">
@@ -45,7 +84,21 @@ export default Projects
 
 
 
-const projects = [
+const projects: Project[] = [
+  {
+    img: "/anju.png",
+    name: "Anju Shahani Portfolio",
+    link: "https://anjushahani.com",
+    description: "A Portfolio Website of a Dubai based Laughter Yoga Coach. I contributed to multiple UI component.",
+    TechUsed: "React, Tailwind Css, Shadcn Ui"
+  },
+  {
+    img: "/pro-sport.png",
+    name: "Pro Sport India Pvt. Ltd.",
+    link: "https://www.proatheletesports.com",
+    description: "A Company Website of a Sport Management Company",
+    TechUsed: "React, Tailwind Css, Shadcn Ui"
+  },
   {
     img: "/ColdMailer.Ai.png",
     name: "ColdMailer.Ai",
@@ -66,19 +119,5 @@ const projects = [
     link: "https://kloset-app.vercel.app/",
     description: "An E-commerce platform for the seamless shopping experience",
     TechUsed: "Gemini Api, React, Nodejs, Express, MongoDB"
-  },
-  {
-    img: "/anju.png",
-    name: "Anju Shahani Portfolio",
-    link: "https://anjushahani.com",
-    description: "A Portfolio Website of a Dubai based Laughter Yoga Coach. I contributed to multiple UI component.",
-    TechUsed: "React, Tailwind Css, Shadcn Ui"
-  },
-  {
-    img: "/pro-sport.png",
-    name: "Pro Sport India Pvt. Ltd.",
-    link: "https://www.proatheletesports.com",
-    description: "A Company Website of a Sport Management Company",
-    TechUsed: "React, Tailwind Css, Shadcn Ui"
   },
 ]

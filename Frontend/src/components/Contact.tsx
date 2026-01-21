@@ -8,10 +8,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
 import { useState } from "react";
 
-interface contactdata {
-  name: string,
-  email: string,
-  message: string
+interface ContactData {
+  name: string;
+  email: string;
+  message: string;
 }
 
 const BASEURL = import.meta.env.VITE_BACKEND_BASEURL
@@ -20,9 +20,9 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false)
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<contactdata>();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactData>();
 
-  const onSubmit = async (data: contactdata) => {
+  const onSubmit = async (data: ContactData) => {
     setLoading(true)
     try {
       const res = await axios.post(`${BASEURL}/api/v1/contact/new-contact`, data, {
@@ -52,6 +52,7 @@ const Contact = () => {
         });
       }
     } catch (error) {
+      console.error(error);
       toast('Something went wrong, Please try again.', {
           position: "top-right",
           autoClose: 5000,
@@ -84,7 +85,7 @@ const Contact = () => {
         <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-6 sm:gap-14 items-center">
 
           {/* Left Side */}
-          <div className="spacey-y-5 sm:space-y-8">
+          <div className="space-y-5 sm:space-y-8">
             <div>
               <h2 className="text-3xl lg:text-5xl tracking-wider font-medium text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700">
                 DO YOU HAVE A PROJECT TO DISCUSS?
@@ -99,13 +100,31 @@ const Contact = () => {
             <div>
               <h3 className="text-xl font-semibold mb-2">Social Media</h3>
               <div className="flex gap-4 mt-3">
-                <a href="https://github.com/Krushna03" target="_blank" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300">
+                <a 
+                  href="https://github.com/Krushna03" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Visit GitHub profile"
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#ff2a8d]/50"
+                >
                   <FaGithub className="w-4 h-4" />
                 </a>
-                <a href="https://www.linkedin.com/in/krushna-sakhare" target="_blank" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2">
+                <a 
+                  href="https://www.linkedin.com/in/krushna-sakhare" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Visit LinkedIn profile"
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#ff2a8d]/50"
+                >
                   <Linkedin />
                 </a>
-                <a href="https://x.com/sakhare_kr9294" target="_blank" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2">
+                <a 
+                  href="https://x.com/sakhare_kr9294" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Visit Twitter/X profile"
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#ff2a8d]/50"
+                >
                   <Twitter />
                 </a>
               </div>
@@ -126,11 +145,17 @@ const Contact = () => {
             <div>
               <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
               <input 
-                {...register("email", { required: true })}
+                {...register("email", { 
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address"
+                  }
+                })}
                 type="email"
                 className="w-full px-4 py-2 bg-[#111122] border border-[#222233] rounded-md focus:ring-2 focus:ring-[#ff2a8d]/50"
               />
-              {errors.email && <p className="text-red-400 text-sm mt-1">Email is required</p>}
+              {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email.message || "Email is required"}</p>}
             </div>
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>

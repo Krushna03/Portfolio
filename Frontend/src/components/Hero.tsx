@@ -119,8 +119,10 @@ export default function Hero() {
             <div className="left-10 md:right-10 absolute inset-0 rounded-full blur-xl opacity-15 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500"></div>
               <img
                 src="/profile-2.png"
-                alt="Frontend Developer"
+                alt="Krushna Sakhare - Full Stack Developer"
                 className="relative h-96 mt-6 lg:mt-0 md:w-[320px] md:h-[500px] lg:w-[450px] lg:h-auto object-fill md:mr-12 lg:mr-24"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
         </motion.div>

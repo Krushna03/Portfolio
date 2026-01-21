@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../lib/animations";
 import SpotlightCard from "./ui/SpotlightCard";
+import { useState } from "react";
+import { Skeleton } from "./ui/Skeleton";
 
 const AboutMe = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section id='about' className="mx-4 sm:mx-6 lg:container lg:mx-auto md:mx-8 py-16 md:py-24 overflow-x-hidden">
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-12">
@@ -22,12 +26,19 @@ const AboutMe = () => {
           <div className="hidden sm:block w-full lg:w-1/3 flex justify-center ml-6">
             <div className="relative">
               <div className="absolute inset-0 rounded-2xl blur-2xl opacity-30 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
-              <div className="relative">
+              <div className="relative w-full max-w-[410px]">
+                {!imageLoaded && (
+                  <Skeleton className="absolute inset-0 w-full h-[410px] rounded-2xl" />
+                )}
                 <img
                   src="/about-me.png"
                   alt="Krushna Sakhare - Full Stack Developer"
-                  className="w-full max-w-[410px] rounded-2xl object-cover border-2 border-white/20 shadow-2xl cursor-pointer"
+                  className={`w-full max-w-[410px] rounded-2xl object-cover border-2 border-white/20 shadow-2xl cursor-pointer transition-opacity duration-300 ${
+                    imageLoaded ? 'opacity-100' : 'opacity-0'
+                  }`}
                   loading="lazy"
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(true)}
                 />
               </div>
             </div>

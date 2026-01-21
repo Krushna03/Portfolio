@@ -8,13 +8,31 @@ export default function Footer() {
         <p className="text-white/80 text-sm text-center">© {new Date().getFullYear()} Krushna Sakhare. <br className="block sm:hidden"/> krushnasakhare965@gmail.com </p>
         
         <div className="flex gap-4 mt-3">
-          <a href="https://github.com/Krushna03" target="_blank" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300">
+          <a 
+            href="https://github.com/Krushna03" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Visit GitHub profile"
+            className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#ff2a8d]/50"
+          >
             <FaGithub className="w-4 h-4" />
           </a>
-          <a href="https://www.linkedin.com/in/krushna-sakhare" target="_blank" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2">
+          <a 
+            href="https://www.linkedin.com/in/krushna-sakhare" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Visit LinkedIn profile"
+            className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#ff2a8d]/50"
+          >
             <Linkedin />
           </a>
-          <a href="https://x.com/sakhare_kr9294" target="_blank" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2">
+          <a 
+            href="https://x.com/sakhare_kr9294" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Visit Twitter/X profile"
+            className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff2a8d]/80 transition-colors duration-300 p-2 focus:outline-none focus:ring-2 focus:ring-[#ff2a8d]/50"
+          >
             <Twitter />
           </a>
         </div>
