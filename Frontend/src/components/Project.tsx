@@ -103,6 +103,13 @@ const projects: Project[] = [
     TechUsed: "React, Tailwind Css, Shadcn Ui"
   },
   {
+    img: "/akw-advisory.png",
+    name: "AKW Advisory",
+    link: "https://akwadvisors.vercel.app/",
+    description: "A Website for a Financial Advisory Company",
+    TechUsed: "Nextjs, Tailwind CSS, Nodejs, Express, MongoDB, Google Analytics"
+  },
+  {
     img: "/pro-sport.png",
     name: "Pro Sport India Pvt. Ltd.",
     link: "https://www.proatheletesports.com",
