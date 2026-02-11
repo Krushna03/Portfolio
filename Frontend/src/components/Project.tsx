@@ -132,7 +132,7 @@ const projects: Project[] = [
   {
     img: "/akw-advisory.png",
     name: "AKW Advisory",
-    link: "https://akwadvisors.vercel.app/",
+    link: "https://akw-advisors.com/",
     description: "A Website for a Financial Advisory Company",
     TechUsed: "Nextjs, Tailwind CSS, Nodejs, Express, MongoDB, Google Analytics",
     category: 'client'
