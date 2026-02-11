@@ -21,9 +21,9 @@ export default function App() {
       {/* Sections */}
         <Hero />
         <AboutMe />
+        <Projects />
         <Services />
         <Skills />
-        <Projects />
         <Contact />
 
       {/* Footer */}
