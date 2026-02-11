@@ -44,8 +44,8 @@ const Projects = () => {
               key={filter}
               onClick={() => setActiveFilter(filter as any)}
               className={`px-6 py-2 rounded-full border transition-all duration-300 capitalize ${activeFilter === filter
-                  ? 'bg-gradient-to-r from-pink-500 to-purple-600 border-transparent text-white shadow-lg'
-                  : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white'
+                ? 'bg-gradient-to-r from-pink-500 to-purple-600 border-transparent text-white shadow-lg'
+                : 'border-white/20 text-white/60 hover:border-white/40 hover:text-white'
                 }`}
             >
               {filter === 'all' ? 'All Projects' : `${filter} projects`}
@@ -119,6 +119,14 @@ const projects: Project[] = [
     link: "https://align-with-glossom.vercel.app",
     description: "A website for a sacred sanctuary for souls seeking mindset transformation, spiritual alignment, and manifestation.",
     TechUsed: "React, Framer Motion, Tailwind CSS",
+    category: 'client'
+  },
+  {
+    img: "/tds-avenue-codeforge.png",
+    name: "TDS Avenue CodeForge",
+    link: "https://tdsavenuecodeforge.in/",
+    description: "Enterprise-grade web, mobile, cloud, data & AI solutions built to scale.",
+    TechUsed: "Next.js, Tailwind CSS, AI Integration",
     category: 'client'
   },
   {
