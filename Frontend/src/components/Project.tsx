@@ -154,7 +154,7 @@ const projects: Project[] = [
     category: 'client'
   },
   {
-    img: "nexora-prive.png",
+    img: "/nexora-prive.png",
     name: "Nexora Prive",
     link: "https://nexora-prive.vercel.app",
     description: "A luxury suite for a rich class people",
