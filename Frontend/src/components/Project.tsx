@@ -154,6 +154,14 @@ const projects: Project[] = [
     category: 'client'
   },
   {
+    img: "nexora-prive.png",
+    name: "Nexora Prive",
+    link: "https://nexora-prive.vercel.app",
+    description: "A luxury suite for a rich class people",
+    TechUsed: "Nextjs, TailwindCSS",
+    category: 'client'
+  },
+  {
     img: "/ColdMailer.Ai.png",
     name: "ColdMailer.Ai",
     link: "https://coldmailer-ai.vercel.app/",
