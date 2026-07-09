@@ -8,7 +8,7 @@ export default function Hero() {
 
   const handleResumeDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Krushna Shivshankar Sakahre Latest Resume.pdf"; 
+    link.href = "/Krushna Sakhare - Full Stack Developer.pdf"; 
     link.download = "Krushna-Sakhare-Resume.pdf"; 
     link.click();
   }
